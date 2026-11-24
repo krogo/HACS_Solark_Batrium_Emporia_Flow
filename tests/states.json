@@ -4,21 +4,24 @@
 "state": "on",
 "attributes": {
 "friendly_name": "SolArk PV Inverter Modbus Update"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "update.emporia_vue_update": {
 "entity_id": "update.emporia_vue_update",
 "state": "off",
 "attributes": {
 "friendly_name": "Emporia Vue Update"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_inverter_error_message": {
 "entity_id": "sensor.solark_inverter_error_message",
 "state": "No Faults",
 "attributes": {
 "friendly_name": "SolArk Inverter error Message"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_pv_input_power": {
 "entity_id": "sensor.solark_pv_input_power",
@@ -26,21 +29,24 @@
 "attributes": {
 "friendly_name": "SolArk PV Input Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_grid_relay": {
 "entity_id": "sensor.solark_grid_relay",
 "state": "Closed",
 "attributes": {
 "friendly_name": "SolArk Grid Relay"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.garage_solark_battery_measurement_mode": {
 "entity_id": "sensor.garage_solark_battery_measurement_mode",
 "state": "SOC",
 "attributes": {
 "friendly_name": "SolArk Battery Measurement Mode"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_total_grid_breaker_energy": {
 "entity_id": "sensor.solark_total_grid_breaker_energy",
@@ -48,7 +54,8 @@
 "attributes": {
 "friendly_name": "SolArk Total Grid Breaker Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_daily_battery_charge_energy": {
 "entity_id": "sensor.solark_daily_battery_charge_energy",
@@ -56,7 +63,8 @@
 "attributes": {
 "friendly_name": "SolArk Daily Battery Charge Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_daily_battery_discharge_energy": {
 "entity_id": "sensor.solark_daily_battery_discharge_energy",
@@ -64,7 +72,8 @@
 "attributes": {
 "friendly_name": "SolArk Daily Battery Discharge Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_daily_grid_buy_energy": {
 "entity_id": "sensor.solark_daily_grid_buy_energy",
@@ -72,7 +81,8 @@
 "attributes": {
 "friendly_name": "SolArk Daily Grid Buy Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_daily_grid_sell_energy": {
 "entity_id": "sensor.solark_daily_grid_sell_energy",
@@ -80,7 +90,8 @@
 "attributes": {
 "friendly_name": "SolArk Daily Grid Sell Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_grid_frequency": {
 "entity_id": "sensor.solark_grid_frequency",
@@ -88,7 +99,8 @@
 "attributes": {
 "friendly_name": "SolArk Grid Frequency",
 "unit_of_measurement": "Hz"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_daily_load_energy": {
 "entity_id": "sensor.solark_daily_load_energy",
@@ -96,7 +108,8 @@
 "attributes": {
 "friendly_name": "SolArk Daily Load Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_total_load_energy": {
 "entity_id": "sensor.solark_total_load_energy",
@@ -104,7 +117,8 @@
 "attributes": {
 "friendly_name": "SolArk Total Load Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_total_pv_energy": {
 "entity_id": "sensor.solark_total_pv_energy",
@@ -112,14 +126,16 @@
 "attributes": {
 "friendly_name": "SolArk Total PV Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_inverter_fault_information_raw_value": {
 "entity_id": "sensor.solark_inverter_fault_information_raw_value",
 "state": "0",
 "attributes": {
 "friendly_name": "SolArk Inverter Fault Information Raw Value"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_daily_pv_energy": {
 "entity_id": "sensor.solark_daily_pv_energy",
@@ -127,7 +143,8 @@
 "attributes": {
 "friendly_name": "SolArk Daily PV Energy",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_pv1_voltage": {
 "entity_id": "sensor.solark_pv1_voltage",
@@ -135,7 +152,8 @@
 "attributes": {
 "friendly_name": "SolArk PV1 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_pv1_current": {
 "entity_id": "sensor.solark_pv1_current",
@@ -143,7 +161,8 @@
 "attributes": {
 "friendly_name": "SolArk PV1 Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_pv2_voltage": {
 "entity_id": "sensor.solark_pv2_voltage",
@@ -151,7 +170,8 @@
 "attributes": {
 "friendly_name": "SolArk PV2 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_pv2_current": {
 "entity_id": "sensor.solark_pv2_current",
@@ -159,7 +179,8 @@
 "attributes": {
 "friendly_name": "SolArk PV2 Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_grid_l1_l2_voltage": {
 "entity_id": "sensor.solark_grid_l1_l2_voltage",
@@ -167,7 +188,8 @@
 "attributes": {
 "friendly_name": "SolArk Grid L1-L2 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_inverter_l1_l2_voltage": {
 "entity_id": "sensor.solark_inverter_l1_l2_voltage",
@@ -175,7 +197,8 @@
 "attributes": {
 "friendly_name": "SolArk Inverter L1-L2 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_gen_power": {
 "entity_id": "sensor.solark_gen_power",
@@ -183,7 +206,8 @@
 "attributes": {
 "friendly_name": "SolArk Gen Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_total_grid_power": {
 "entity_id": "sensor.solark_total_grid_power",
@@ -191,7 +215,8 @@
 "attributes": {
 "friendly_name": "SolArk Total Grid Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_inverter_l1_power": {
 "entity_id": "sensor.solark_inverter_l1_power",
@@ -199,7 +224,8 @@
 "attributes": {
 "friendly_name": "SolArk Inverter L1 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_inverter_l2_power": {
 "entity_id": "sensor.solark_inverter_l2_power",
@@ -207,7 +233,8 @@
 "attributes": {
 "friendly_name": "SolArk Inverter L2 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_inverter_power": {
 "entity_id": "sensor.solark_inverter_power",
@@ -215,7 +242,8 @@
 "attributes": {
 "friendly_name": "SolArk Inverter Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_load_power": {
 "entity_id": "sensor.solark_load_power",
@@ -223,7 +251,8 @@
 "attributes": {
 "friendly_name": "SolArk Load Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_battery_voltage": {
 "entity_id": "sensor.solark_battery_voltage",
@@ -231,7 +260,8 @@
 "attributes": {
 "friendly_name": "SolArk Battery Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_pv1_input_power": {
 "entity_id": "sensor.solark_pv1_input_power",
@@ -239,7 +269,8 @@
 "attributes": {
 "friendly_name": "SolArk PV1 Input Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_pv2_input_power": {
 "entity_id": "sensor.solark_pv2_input_power",
@@ -247,7 +278,8 @@
 "attributes": {
 "friendly_name": "SolArk PV2 Input Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_battery_power": {
 "entity_id": "sensor.solark_battery_power",
@@ -255,7 +287,8 @@
 "attributes": {
 "friendly_name": "SolArk Battery Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_battery_current": {
 "entity_id": "sensor.solark_battery_current",
@@ -263,21 +296,24 @@
 "attributes": {
 "friendly_name": "SolArk Battery Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.garage_solark_tou_days": {
 "entity_id": "sensor.garage_solark_tou_days",
 "state": "Mon, Tue, Wed, Thu, Fri, Sat, Sun",
 "attributes": {
 "friendly_name": "SolArk TOU DAYS"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.solark_configuration": {
 "entity_id": "sensor.solark_configuration",
 "state": "loaded",
 "attributes": {
 "friendly_name": "SolArk Configuration"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_battery_charge_current_limit": {
 "entity_id": "number.garage_solark_battery_charge_current_limit",
@@ -285,7 +321,8 @@
 "attributes": {
 "friendly_name": "SolArk Battery Charge Current Limit",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou1_power": {
 "entity_id": "number.garage_solark_tou1_power",
@@ -293,7 +330,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU1 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou2_power": {
 "entity_id": "number.garage_solark_tou2_power",
@@ -301,7 +339,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU2 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou3_power": {
 "entity_id": "number.garage_solark_tou3_power",
@@ -309,7 +348,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU3 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou4_power": {
 "entity_id": "number.garage_solark_tou4_power",
@@ -317,7 +357,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU4 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou5_power": {
 "entity_id": "number.garage_solark_tou5_power",
@@ -325,7 +366,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU5 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou6_power": {
 "entity_id": "number.garage_solark_tou6_power",
@@ -333,7 +375,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU6 Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou1_voltage": {
 "entity_id": "number.garage_solark_tou1_voltage",
@@ -341,7 +384,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU1 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou2_voltage": {
 "entity_id": "number.garage_solark_tou2_voltage",
@@ -349,7 +393,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU2 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou3_voltage": {
 "entity_id": "number.garage_solark_tou3_voltage",
@@ -357,7 +402,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU3 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou4_voltage": {
 "entity_id": "number.garage_solark_tou4_voltage",
@@ -365,7 +411,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU4 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou5_voltage": {
 "entity_id": "number.garage_solark_tou5_voltage",
@@ -373,7 +420,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU5 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou6_voltage": {
 "entity_id": "number.garage_solark_tou6_voltage",
@@ -381,7 +429,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU6 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou1_soc": {
 "entity_id": "number.garage_solark_tou1_soc",
@@ -389,7 +438,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU1 SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou2_soc": {
 "entity_id": "number.garage_solark_tou2_soc",
@@ -397,7 +447,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU2 SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou3_soc": {
 "entity_id": "number.garage_solark_tou3_soc",
@@ -405,7 +456,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU3 SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou4_soc": {
 "entity_id": "number.garage_solark_tou4_soc",
@@ -413,7 +465,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU4 SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou5_soc": {
 "entity_id": "number.garage_solark_tou5_soc",
@@ -421,7 +474,8 @@
 "attributes": {
 "friendly_name": "SolArk TOU5 SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "number.garage_solark_tou6_soc": {
 "entity_id": "number.garage_solark_tou6_soc",
@@ -429,98 +483,112 @@
 "attributes": {
 "friendly_name": "SolArk TOU6 SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "time.garage_solark_tou1_time": {
 "entity_id": "time.garage_solark_tou1_time",
 "state": "01:00:00",
 "attributes": {
 "friendly_name": "SolArk TOU1 Time"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "time.garage_solark_tou2_time": {
 "entity_id": "time.garage_solark_tou2_time",
 "state": "05:00:00",
 "attributes": {
 "friendly_name": "SolArk TOU2 Time"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "time.garage_solark_tou3_time": {
 "entity_id": "time.garage_solark_tou3_time",
 "state": "09:00:00",
 "attributes": {
 "friendly_name": "SolArk TOU3 Time"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "time.garage_solark_tou4_time": {
 "entity_id": "time.garage_solark_tou4_time",
 "state": "13:00:00",
 "attributes": {
 "friendly_name": "SolArk TOU4 Time"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "time.garage_solark_tou5_time": {
 "entity_id": "time.garage_solark_tou5_time",
 "state": "17:00:00",
 "attributes": {
 "friendly_name": "SolArk TOU5 Time"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "time.garage_solark_tou6_time": {
 "entity_id": "time.garage_solark_tou6_time",
 "state": "21:00:00",
 "attributes": {
 "friendly_name": "SolArk TOU6 Time"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "select.garage_solark_tou1_charge_sell": {
 "entity_id": "select.garage_solark_tou1_charge_sell",
 "state": "Charge",
 "attributes": {
 "friendly_name": "SolArk TOU1 Charge & Sell"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "select.garage_solark_tou2_charge_sell": {
 "entity_id": "select.garage_solark_tou2_charge_sell",
 "state": "Charge",
 "attributes": {
 "friendly_name": "SolArk TOU2 Charge & Sell"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "select.garage_solark_tou3_charge_sell": {
 "entity_id": "select.garage_solark_tou3_charge_sell",
 "state": "Charge",
 "attributes": {
 "friendly_name": "SolArk TOU3 Charge & Sell"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "select.garage_solark_tou4_charge_sell": {
 "entity_id": "select.garage_solark_tou4_charge_sell",
 "state": "Charge",
 "attributes": {
 "friendly_name": "SolArk TOU4 Charge & Sell"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "select.garage_solark_tou5_charge_sell": {
 "entity_id": "select.garage_solark_tou5_charge_sell",
 "state": "Charge",
 "attributes": {
 "friendly_name": "SolArk TOU5 Charge & Sell"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "select.garage_solark_tou6_charge_sell": {
 "entity_id": "select.garage_solark_tou6_charge_sell",
 "state": "Charge",
 "attributes": {
 "friendly_name": "SolArk TOU6 Charge & Sell"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "light.emporiavue2_d3_led": {
 "entity_id": "light.emporiavue2_d3_led",
 "state": "on",
 "attributes": {
 "friendly_name": "vue2 D3_LED"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_phase_a_voltage": {
 "entity_id": "sensor.emporiavue2_phase_a_voltage",
@@ -528,7 +596,8 @@
 "attributes": {
 "friendly_name": "vue2 Phase A Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_phase_a_frequency": {
 "entity_id": "sensor.emporiavue2_phase_a_frequency",
@@ -536,7 +605,8 @@
 "attributes": {
 "friendly_name": "vue2 Phase A Frequency",
 "unit_of_measurement": "Hz"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_phase_b_voltage": {
 "entity_id": "sensor.emporiavue2_phase_b_voltage",
@@ -544,7 +614,8 @@
 "attributes": {
 "friendly_name": "vue2 Phase B Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_phase_b_phase_angle": {
 "entity_id": "sensor.emporiavue2_phase_b_phase_angle",
@@ -552,7 +623,8 @@
 "attributes": {
 "friendly_name": "vue2 Phase B Phase Angle",
 "unit_of_measurement": "\u00b0"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_phase_a_power": {
 "entity_id": "sensor.emporiavue2_phase_a_power",
@@ -560,7 +632,8 @@
 "attributes": {
 "friendly_name": "vue2 Phase A Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_phase_b_power": {
 "entity_id": "sensor.emporiavue2_phase_b_power",
@@ -568,7 +641,8 @@
 "attributes": {
 "friendly_name": "vue2 Phase B Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_building_phase_a_power": {
 "entity_id": "sensor.emporiavue2_building_phase_a_power",
@@ -576,7 +650,8 @@
 "attributes": {
 "friendly_name": "vue2 Building Phase A Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_building_phase_b_power": {
 "entity_id": "sensor.emporiavue2_building_phase_b_power",
@@ -584,7 +659,8 @@
 "attributes": {
 "friendly_name": "vue2 Building Phase B Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_dryer_power": {
 "entity_id": "sensor.emporiavue2_dryer_power",
@@ -592,7 +668,8 @@
 "attributes": {
 "friendly_name": "vue2 Dryer Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_refrigerator_power": {
 "entity_id": "sensor.emporiavue2_refrigerator_power",
@@ -600,7 +677,8 @@
 "attributes": {
 "friendly_name": "vue2 Refrigerator Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_utility_room_power": {
 "entity_id": "sensor.emporiavue2_utility_room_power",
@@ -608,7 +686,8 @@
 "attributes": {
 "friendly_name": "vue2 Utility Room Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_master_bed_room_power": {
 "entity_id": "sensor.emporiavue2_master_bed_room_power",
@@ -616,7 +695,8 @@
 "attributes": {
 "friendly_name": "vue2 Master Bed Room Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_kitchen_south_dishwasher_power_2": {
 "entity_id": "sensor.emporiavue2_kitchen_south_dishwasher_power_2",
@@ -624,7 +704,8 @@
 "attributes": {
 "friendly_name": "vue2 Kitchen South \u2044 Dishwasher Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_garage_phase_a_power": {
 "entity_id": "sensor.emporiavue2_garage_phase_a_power",
@@ -632,7 +713,8 @@
 "attributes": {
 "friendly_name": "vue2 Garage Phase A Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_garage_phase_b_power": {
 "entity_id": "sensor.emporiavue2_garage_phase_b_power",
@@ -640,7 +722,8 @@
 "attributes": {
 "friendly_name": "vue2 Garage Phase B Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_heat_pump_power": {
 "entity_id": "sensor.emporiavue2_heat_pump_power",
@@ -648,7 +731,8 @@
 "attributes": {
 "friendly_name": "vue2 Heat Pump Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_microwave_power": {
 "entity_id": "sensor.emporiavue2_microwave_power",
@@ -656,7 +740,8 @@
 "attributes": {
 "friendly_name": "vue2 Microwave Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_range_power": {
 "entity_id": "sensor.emporiavue2_range_power",
@@ -664,7 +749,8 @@
 "attributes": {
 "friendly_name": "vue2 Range Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_water_heater_power": {
 "entity_id": "sensor.emporiavue2_water_heater_power",
@@ -672,7 +758,8 @@
 "attributes": {
 "friendly_name": "vue2 Water Heater Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_total_power": {
 "entity_id": "sensor.emporiavue2_total_power",
@@ -680,7 +767,8 @@
 "attributes": {
 "friendly_name": "vue2 Total Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_total_daily_energy": {
 "entity_id": "sensor.emporiavue2_total_daily_energy",
@@ -688,7 +776,8 @@
 "attributes": {
 "friendly_name": "vue2 Total Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_balance_power": {
 "entity_id": "sensor.emporiavue2_balance_power",
@@ -696,7 +785,8 @@
 "attributes": {
 "friendly_name": "vue2 Balance Power",
 "unit_of_measurement": "W"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_balance_daily_energy": {
 "entity_id": "sensor.emporiavue2_balance_daily_energy",
@@ -704,7 +794,8 @@
 "attributes": {
 "friendly_name": "vue2 Balance Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_building_phase_a_daily_energy": {
 "entity_id": "sensor.emporiavue2_building_phase_a_daily_energy",
@@ -712,7 +803,8 @@
 "attributes": {
 "friendly_name": "vue2 Building Phase A Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_building_phase_b_daily_energy": {
 "entity_id": "sensor.emporiavue2_building_phase_b_daily_energy",
@@ -720,7 +812,8 @@
 "attributes": {
 "friendly_name": "vue2 Building Phase B Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_dryer_daily_energy": {
 "entity_id": "sensor.emporiavue2_dryer_daily_energy",
@@ -728,7 +821,8 @@
 "attributes": {
 "friendly_name": "vue2 Dryer Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_refrigerator_daily_energy": {
 "entity_id": "sensor.emporiavue2_refrigerator_daily_energy",
@@ -736,7 +830,8 @@
 "attributes": {
 "friendly_name": "vue2 Refrigerator Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_utility_room_daily_energy": {
 "entity_id": "sensor.emporiavue2_utility_room_daily_energy",
@@ -744,7 +839,8 @@
 "attributes": {
 "friendly_name": "vue2 Utility Room Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_master_bed_room_daily_energy": {
 "entity_id": "sensor.emporiavue2_master_bed_room_daily_energy",
@@ -752,7 +848,8 @@
 "attributes": {
 "friendly_name": "vue2 Master Bed Room Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_kitchen_south_dishwasher_daily_energy_2": {
 "entity_id": "sensor.emporiavue2_kitchen_south_dishwasher_daily_energy_2",
@@ -760,7 +857,8 @@
 "attributes": {
 "friendly_name": "vue2 Kitchen South \u2044 Dishwasher Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_garage_phase_a_daily_energy": {
 "entity_id": "sensor.emporiavue2_garage_phase_a_daily_energy",
@@ -768,7 +866,8 @@
 "attributes": {
 "friendly_name": "vue2 Garage Phase A Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_garage_phase_b_daily_energy": {
 "entity_id": "sensor.emporiavue2_garage_phase_b_daily_energy",
@@ -776,7 +875,8 @@
 "attributes": {
 "friendly_name": "vue2 Garage Phase B Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_heat_pump_daily_energy": {
 "entity_id": "sensor.emporiavue2_heat_pump_daily_energy",
@@ -784,7 +884,8 @@
 "attributes": {
 "friendly_name": "vue2 Heat Pump Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_microwave_daily_energy": {
 "entity_id": "sensor.emporiavue2_microwave_daily_energy",
@@ -792,7 +893,8 @@
 "attributes": {
 "friendly_name": "vue2 Microwave Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_range_daily_energy": {
 "entity_id": "sensor.emporiavue2_range_daily_energy",
@@ -800,7 +902,8 @@
 "attributes": {
 "friendly_name": "vue2 Range Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.emporiavue2_water_heater_daily_energy": {
 "entity_id": "sensor.emporiavue2_water_heater_daily_energy",
@@ -808,21 +911,24 @@
 "attributes": {
 "friendly_name": "vue2 Water Heater Daily Energy",
 "unit_of_measurement": "Wh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "button.emporiavue2_two_beeps": {
 "entity_id": "button.emporiavue2_two_beeps",
 "state": "2023-08-26T17:55:37.599460+00:00",
 "attributes": {
 "friendly_name": "vue2 Two Beeps"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "update.vue2_firmware": {
 "entity_id": "update.vue2_firmware",
 "state": "on",
 "attributes": {
 "friendly_name": "vue2 Firmware"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_min_cell_volt": {
 "entity_id": "sensor.batrium_min_cell_volt",
@@ -830,7 +936,8 @@
 "attributes": {
 "friendly_name": "Batrium Shunt Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_max_cell_volt": {
 "entity_id": "sensor.batrium_max_cell_volt",
@@ -838,7 +945,8 @@
 "attributes": {
 "friendly_name": "Batrium Max Cell Volt",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_1_voltage": {
 "entity_id": "sensor.batrium_cell_1_voltage",
@@ -846,7 +954,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 1 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_2_voltage": {
 "entity_id": "sensor.batrium_cell_2_voltage",
@@ -854,7 +963,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 2 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_3_voltage": {
 "entity_id": "sensor.batrium_cell_3_voltage",
@@ -862,7 +972,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 3 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_4_voltage": {
 "entity_id": "sensor.batrium_cell_4_voltage",
@@ -870,7 +981,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 4 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_5_voltage": {
 "entity_id": "sensor.batrium_cell_5_voltage",
@@ -878,7 +990,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 5 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_6_voltage": {
 "entity_id": "sensor.batrium_cell_6_voltage",
@@ -886,7 +999,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 6 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_7_voltage": {
 "entity_id": "sensor.batrium_cell_7_voltage",
@@ -894,7 +1008,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 7 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_8_voltage": {
 "entity_id": "sensor.batrium_cell_8_voltage",
@@ -902,7 +1017,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 8 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_9_voltage": {
 "entity_id": "sensor.batrium_cell_9_voltage",
@@ -910,7 +1026,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 9 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_10_voltage": {
 "entity_id": "sensor.batrium_cell_10_voltage",
@@ -918,7 +1035,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 10 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_11_voltage": {
 "entity_id": "sensor.batrium_cell_11_voltage",
@@ -926,7 +1044,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 11 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_12_voltage": {
 "entity_id": "sensor.batrium_cell_12_voltage",
@@ -934,7 +1053,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 12 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_13_voltage": {
 "entity_id": "sensor.batrium_cell_13_voltage",
@@ -942,7 +1062,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 13 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_14_voltage": {
 "entity_id": "sensor.batrium_cell_14_voltage",
@@ -950,7 +1071,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 14 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_15_voltage": {
 "entity_id": "sensor.batrium_cell_15_voltage",
@@ -958,14 +1080,16 @@
 "attributes": {
 "friendly_name": "Batrium Cell 15 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_system_status": {
 "entity_id": "sensor.batrium_system_status",
 "state": "Charging",
 "attributes": {
 "friendly_name": "Batrium System Status"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_max_cell_temp": {
 "entity_id": "sensor.batrium_max_cell_temp",
@@ -973,7 +1097,8 @@
 "attributes": {
 "friendly_name": "Batrium Max Cell Temp",
 "unit_of_measurement": "\u00b0C"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_min_cell_temp": {
 "entity_id": "sensor.batrium_min_cell_temp",
@@ -981,7 +1106,8 @@
 "attributes": {
 "friendly_name": "Batrium Min Cell Temp",
 "unit_of_measurement": "\u00b0C"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_shunt_power": {
 "entity_id": "sensor.batrium_shunt_power",
@@ -989,7 +1115,8 @@
 "attributes": {
 "friendly_name": "Batrium Shunt Power",
 "unit_of_measurement": "kW"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_capacity_to_full": {
 "entity_id": "sensor.batrium_capacity_to_full",
@@ -997,7 +1124,8 @@
 "attributes": {
 "friendly_name": "Batrium Capacity To Full",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_capacity_to_empty": {
 "entity_id": "sensor.batrium_capacity_to_empty",
@@ -1005,14 +1133,16 @@
 "attributes": {
 "friendly_name": "Batrium Capacity To Empty",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "time.batrium_time_to_empty_formatted": {
 "entity_id": "time.batrium_time_to_empty_formatted",
 "state": "unavailable",
 "attributes": {
 "friendly_name": "Batrium Time To Empty Formatted"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charge_target_current": {
 "entity_id": "sensor.batrium_charge_target_current",
@@ -1020,7 +1150,8 @@
 "attributes": {
 "friendly_name": "Batrium Charge Current Limit",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_discharge_target_current": {
 "entity_id": "sensor.batrium_discharge_target_current",
@@ -1028,7 +1159,8 @@
 "attributes": {
 "friendly_name": "Batrium Discharge Current Limit",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-20T10:00:00+00:00"
 },
 "sensor.batrium_cell_10_temp": {
 "entity_id": "sensor.batrium_cell_10_temp",
@@ -1036,7 +1168,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 10 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_10_bypass_temp": {
 "entity_id": "sensor.batrium_cell_10_bypass_temp",
@@ -1044,28 +1177,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 10 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_10_status": {
 "entity_id": "sensor.batrium_cell_10_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 10 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_10_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_10_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 10 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_10_overdue": {
 "entity_id": "binary_sensor.batrium_cell_10_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 10 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_11_temp": {
 "entity_id": "sensor.batrium_cell_11_temp",
@@ -1073,7 +1210,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 11 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_11_bypass_temp": {
 "entity_id": "sensor.batrium_cell_11_bypass_temp",
@@ -1081,28 +1219,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 11 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_11_status": {
 "entity_id": "sensor.batrium_cell_11_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 11 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_11_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_11_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 11 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_11_overdue": {
 "entity_id": "binary_sensor.batrium_cell_11_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 11 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_12_temp": {
 "entity_id": "sensor.batrium_cell_12_temp",
@@ -1110,7 +1252,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 12 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_12_bypass_temp": {
 "entity_id": "sensor.batrium_cell_12_bypass_temp",
@@ -1118,28 +1261,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 12 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_12_status": {
 "entity_id": "sensor.batrium_cell_12_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 12 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_12_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_12_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 12 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_12_overdue": {
 "entity_id": "binary_sensor.batrium_cell_12_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 12 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_13_temp": {
 "entity_id": "sensor.batrium_cell_13_temp",
@@ -1147,7 +1294,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 13 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_13_bypass_temp": {
 "entity_id": "sensor.batrium_cell_13_bypass_temp",
@@ -1155,28 +1303,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 13 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_13_status": {
 "entity_id": "sensor.batrium_cell_13_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 13 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_13_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_13_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 13 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_13_overdue": {
 "entity_id": "binary_sensor.batrium_cell_13_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 13 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_14_temp": {
 "entity_id": "sensor.batrium_cell_14_temp",
@@ -1184,7 +1336,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 14 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_14_bypass_temp": {
 "entity_id": "sensor.batrium_cell_14_bypass_temp",
@@ -1192,28 +1345,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 14 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_14_status": {
 "entity_id": "sensor.batrium_cell_14_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 14 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_14_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_14_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 14 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_14_overdue": {
 "entity_id": "binary_sensor.batrium_cell_14_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 14 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_temp_min": {
 "entity_id": "sensor.batrium_cell_temp_min",
@@ -1221,7 +1378,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell Temp Min",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_temp_max": {
 "entity_id": "sensor.batrium_cell_temp_max",
@@ -1229,7 +1387,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell Temp Max",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_temp_avg": {
 "entity_id": "sensor.batrium_cell_temp_avg",
@@ -1237,7 +1396,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell Temp Avg",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_soc_coulomb": {
 "entity_id": "sensor.batrium_soc_coulomb",
@@ -1245,7 +1405,8 @@
 "attributes": {
 "friendly_name": "Batrium SOC (Coulomb)",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_state_of_charge": {
 "entity_id": "sensor.batrium_state_of_charge",
@@ -1253,35 +1414,40 @@
 "attributes": {
 "friendly_name": "Batrium State of Charge",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cells_balancing": {
 "entity_id": "sensor.batrium_cells_balancing",
 "state": "0",
 "attributes": {
 "friendly_name": "Batrium Cells Balancing"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cells_in_system": {
 "entity_id": "sensor.batrium_cells_in_system",
 "state": "14",
 "attributes": {
 "friendly_name": "Batrium Cells in System"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cells_active": {
 "entity_id": "sensor.batrium_cells_active",
 "state": "14",
 "attributes": {
 "friendly_name": "Batrium Cells Active"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cells_overdue": {
 "entity_id": "sensor.batrium_cells_overdue",
 "state": "0",
 "attributes": {
 "friendly_name": "Batrium Cells Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_min_bypass_session": {
 "entity_id": "sensor.batrium_min_bypass_session",
@@ -1289,7 +1455,8 @@
 "attributes": {
 "friendly_name": "Batrium Min Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_max_bypass_session": {
 "entity_id": "sensor.batrium_max_bypass_session",
@@ -1297,35 +1464,40 @@
 "attributes": {
 "friendly_name": "Batrium Max Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_nodes_online": {
 "entity_id": "sensor.batrium_nodes_online",
 "state": "14",
 "attributes": {
 "friendly_name": "Batrium Nodes Online"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_system_status_2": {
 "entity_id": "sensor.batrium_system_status_2",
 "state": "Charging",
 "attributes": {
 "friendly_name": "Batrium System Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_shunt_status": {
 "entity_id": "sensor.batrium_shunt_status",
 "state": "Charging",
 "attributes": {
 "friendly_name": "Batrium Shunt Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_balancing_active": {
 "entity_id": "binary_sensor.batrium_balancing_active",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Balancing Active"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_1_temp": {
 "entity_id": "sensor.batrium_cell_1_temp",
@@ -1333,7 +1505,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 1 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_1_bypass_temp": {
 "entity_id": "sensor.batrium_cell_1_bypass_temp",
@@ -1341,28 +1514,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 1 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_1_status": {
 "entity_id": "sensor.batrium_cell_1_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 1 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_1_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_1_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 1 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_1_overdue": {
 "entity_id": "binary_sensor.batrium_cell_1_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 1 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_2_temp": {
 "entity_id": "sensor.batrium_cell_2_temp",
@@ -1370,7 +1547,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 2 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_2_bypass_temp": {
 "entity_id": "sensor.batrium_cell_2_bypass_temp",
@@ -1378,28 +1556,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 2 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_2_status": {
 "entity_id": "sensor.batrium_cell_2_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 2 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_2_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_2_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 2 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_2_overdue": {
 "entity_id": "binary_sensor.batrium_cell_2_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 2 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_3_temp": {
 "entity_id": "sensor.batrium_cell_3_temp",
@@ -1407,7 +1589,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 3 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_3_bypass_temp": {
 "entity_id": "sensor.batrium_cell_3_bypass_temp",
@@ -1415,28 +1598,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 3 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_3_status": {
 "entity_id": "sensor.batrium_cell_3_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 3 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_3_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_3_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 3 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_3_overdue": {
 "entity_id": "binary_sensor.batrium_cell_3_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 3 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_4_temp": {
 "entity_id": "sensor.batrium_cell_4_temp",
@@ -1444,7 +1631,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 4 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_4_bypass_temp": {
 "entity_id": "sensor.batrium_cell_4_bypass_temp",
@@ -1452,28 +1640,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 4 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_4_status": {
 "entity_id": "sensor.batrium_cell_4_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 4 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_4_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_4_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 4 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_4_overdue": {
 "entity_id": "binary_sensor.batrium_cell_4_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 4 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_5_temp": {
 "entity_id": "sensor.batrium_cell_5_temp",
@@ -1481,7 +1673,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 5 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_5_bypass_temp": {
 "entity_id": "sensor.batrium_cell_5_bypass_temp",
@@ -1489,28 +1682,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 5 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_5_status": {
 "entity_id": "sensor.batrium_cell_5_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 5 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_5_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_5_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 5 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_5_overdue": {
 "entity_id": "binary_sensor.batrium_cell_5_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 5 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_6_temp": {
 "entity_id": "sensor.batrium_cell_6_temp",
@@ -1518,7 +1715,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 6 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_6_bypass_temp": {
 "entity_id": "sensor.batrium_cell_6_bypass_temp",
@@ -1526,28 +1724,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 6 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_6_status": {
 "entity_id": "sensor.batrium_cell_6_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 6 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_6_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_6_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 6 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_6_overdue": {
 "entity_id": "binary_sensor.batrium_cell_6_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 6 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_7_temp": {
 "entity_id": "sensor.batrium_cell_7_temp",
@@ -1555,7 +1757,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 7 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_7_bypass_temp": {
 "entity_id": "sensor.batrium_cell_7_bypass_temp",
@@ -1563,28 +1766,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 7 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_7_status": {
 "entity_id": "sensor.batrium_cell_7_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 7 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_7_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_7_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 7 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_7_overdue": {
 "entity_id": "binary_sensor.batrium_cell_7_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 7 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_8_temp": {
 "entity_id": "sensor.batrium_cell_8_temp",
@@ -1592,7 +1799,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 8 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_8_bypass_temp": {
 "entity_id": "sensor.batrium_cell_8_bypass_temp",
@@ -1600,28 +1808,32 @@
 "attributes": {
 "friendly_name": "Batrium Cell 8 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_8_status": {
 "entity_id": "sensor.batrium_cell_8_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 8 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_8_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_8_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 8 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_8_overdue": {
 "entity_id": "binary_sensor.batrium_cell_8_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 8 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_9_temp": {
 "entity_id": "sensor.batrium_cell_9_temp",
@@ -1629,7 +1841,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 9 Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_9_bypass_temp": {
 "entity_id": "sensor.batrium_cell_9_bypass_temp",
@@ -1637,35 +1850,40 @@
 "attributes": {
 "friendly_name": "Batrium Cell 9 Bypass Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_9_status": {
 "entity_id": "sensor.batrium_cell_9_status",
 "state": "Ok",
 "attributes": {
 "friendly_name": "Batrium Cell 9 Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_9_in_bypass": {
 "entity_id": "binary_sensor.batrium_cell_9_in_bypass",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 9 In Bypass"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cell_9_overdue": {
 "entity_id": "binary_sensor.batrium_cell_9_overdue",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cell 9 Overdue"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "update.batrium_udp_update_2": {
 "entity_id": "update.batrium_udp_update_2",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium UDP Update"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_voltage_min": {
 "entity_id": "sensor.batrium_cell_voltage_min",
@@ -1673,7 +1891,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell Voltage Min",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_voltage_max": {
 "entity_id": "sensor.batrium_cell_voltage_max",
@@ -1681,7 +1900,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell Voltage Max",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_voltage_avg": {
 "entity_id": "sensor.batrium_cell_voltage_avg",
@@ -1689,7 +1909,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell Voltage Avg",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_voltage_spread": {
 "entity_id": "sensor.batrium_cell_voltage_spread",
@@ -1697,7 +1918,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell Voltage Spread",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_shunt_current": {
 "entity_id": "sensor.batrium_shunt_current",
@@ -1705,7 +1927,8 @@
 "attributes": {
 "friendly_name": "Batrium Shunt Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_pack_power": {
 "entity_id": "sensor.batrium_pack_power",
@@ -1713,7 +1936,8 @@
 "attributes": {
 "friendly_name": "Batrium Pack Power",
 "unit_of_measurement": "kW"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_pack_voltage": {
 "entity_id": "sensor.batrium_pack_voltage",
@@ -1721,7 +1945,8 @@
 "attributes": {
 "friendly_name": "Batrium Pack Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_watchmon_supply_voltage": {
 "entity_id": "sensor.batrium_watchmon_supply_voltage",
@@ -1729,7 +1954,8 @@
 "attributes": {
 "friendly_name": "Batrium WatchMon Supply Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_ambient_temp": {
 "entity_id": "sensor.batrium_ambient_temp",
@@ -1737,7 +1963,8 @@
 "attributes": {
 "friendly_name": "Batrium Ambient Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_shunt_temp": {
 "entity_id": "sensor.batrium_shunt_temp",
@@ -1745,7 +1972,8 @@
 "attributes": {
 "friendly_name": "Batrium Shunt Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_capacity_to_full_2": {
 "entity_id": "sensor.batrium_capacity_to_full_2",
@@ -1753,7 +1981,8 @@
 "attributes": {
 "friendly_name": "Batrium Capacity To Full",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_capacity_to_empty_2": {
 "entity_id": "sensor.batrium_capacity_to_empty_2",
@@ -1761,7 +1990,8 @@
 "attributes": {
 "friendly_name": "Batrium Capacity To Empty",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_estimated_time_to_full": {
 "entity_id": "sensor.batrium_estimated_time_to_full",
@@ -1769,7 +1999,8 @@
 "attributes": {
 "friendly_name": "Batrium Estimated Time To Full",
 "unit_of_measurement": "min"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_estimated_time_to_empty": {
 "entity_id": "sensor.batrium_estimated_time_to_empty",
@@ -1777,7 +2008,8 @@
 "attributes": {
 "friendly_name": "Batrium Estimated Time To Empty",
 "unit_of_measurement": "min"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_average_charge_current": {
 "entity_id": "sensor.batrium_average_charge_current",
@@ -1785,7 +2017,8 @@
 "attributes": {
 "friendly_name": "Batrium Average Charge Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_average_discharge_current": {
 "entity_id": "sensor.batrium_average_discharge_current",
@@ -1793,7 +2026,8 @@
 "attributes": {
 "friendly_name": "Batrium Average Discharge Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_average_net_current": {
 "entity_id": "sensor.batrium_average_net_current",
@@ -1801,7 +2035,8 @@
 "attributes": {
 "friendly_name": "Batrium Average Net Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_min_bypass_current": {
 "entity_id": "sensor.batrium_min_bypass_current",
@@ -1809,7 +2044,8 @@
 "attributes": {
 "friendly_name": "Batrium Min Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_peak_bypass_current": {
 "entity_id": "sensor.batrium_peak_bypass_current",
@@ -1817,14 +2053,16 @@
 "attributes": {
 "friendly_name": "Batrium Peak Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_soc_recalibration_needed": {
 "entity_id": "binary_sensor.batrium_soc_recalibration_needed",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium SOC Recalibration Needed"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_14_voltage_2": {
 "entity_id": "sensor.batrium_cell_14_voltage_2",
@@ -1832,7 +2070,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 14 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_14_bypass_current": {
 "entity_id": "sensor.batrium_cell_14_bypass_current",
@@ -1840,7 +2079,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 14 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_14_bypass_session": {
 "entity_id": "sensor.batrium_cell_14_bypass_session",
@@ -1848,7 +2088,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 14 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_1_voltage_2": {
 "entity_id": "sensor.batrium_cell_1_voltage_2",
@@ -1856,7 +2097,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 1 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_1_bypass_current": {
 "entity_id": "sensor.batrium_cell_1_bypass_current",
@@ -1864,7 +2106,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 1 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_1_bypass_session": {
 "entity_id": "sensor.batrium_cell_1_bypass_session",
@@ -1872,7 +2115,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 1 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_2_voltage_2": {
 "entity_id": "sensor.batrium_cell_2_voltage_2",
@@ -1880,7 +2124,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 2 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_2_bypass_current": {
 "entity_id": "sensor.batrium_cell_2_bypass_current",
@@ -1888,7 +2133,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 2 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_2_bypass_session": {
 "entity_id": "sensor.batrium_cell_2_bypass_session",
@@ -1896,7 +2142,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 2 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_3_voltage_2": {
 "entity_id": "sensor.batrium_cell_3_voltage_2",
@@ -1904,7 +2151,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 3 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_3_bypass_current": {
 "entity_id": "sensor.batrium_cell_3_bypass_current",
@@ -1912,7 +2160,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 3 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_3_bypass_session": {
 "entity_id": "sensor.batrium_cell_3_bypass_session",
@@ -1920,7 +2169,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 3 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_4_voltage_2": {
 "entity_id": "sensor.batrium_cell_4_voltage_2",
@@ -1928,7 +2178,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 4 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_4_bypass_current": {
 "entity_id": "sensor.batrium_cell_4_bypass_current",
@@ -1936,7 +2187,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 4 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_4_bypass_session": {
 "entity_id": "sensor.batrium_cell_4_bypass_session",
@@ -1944,7 +2196,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 4 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_5_voltage_2": {
 "entity_id": "sensor.batrium_cell_5_voltage_2",
@@ -1952,7 +2205,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 5 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_5_bypass_current": {
 "entity_id": "sensor.batrium_cell_5_bypass_current",
@@ -1960,7 +2214,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 5 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_5_bypass_session": {
 "entity_id": "sensor.batrium_cell_5_bypass_session",
@@ -1968,7 +2223,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 5 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_6_voltage_2": {
 "entity_id": "sensor.batrium_cell_6_voltage_2",
@@ -1976,7 +2232,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 6 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_6_bypass_current": {
 "entity_id": "sensor.batrium_cell_6_bypass_current",
@@ -1984,7 +2241,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 6 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_6_bypass_session": {
 "entity_id": "sensor.batrium_cell_6_bypass_session",
@@ -1992,7 +2250,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 6 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_7_voltage_2": {
 "entity_id": "sensor.batrium_cell_7_voltage_2",
@@ -2000,7 +2259,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 7 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_7_bypass_current": {
 "entity_id": "sensor.batrium_cell_7_bypass_current",
@@ -2008,7 +2268,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 7 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_7_bypass_session": {
 "entity_id": "sensor.batrium_cell_7_bypass_session",
@@ -2016,7 +2277,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 7 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_8_voltage_2": {
 "entity_id": "sensor.batrium_cell_8_voltage_2",
@@ -2024,7 +2286,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 8 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_8_bypass_current": {
 "entity_id": "sensor.batrium_cell_8_bypass_current",
@@ -2032,7 +2295,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 8 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_8_bypass_session": {
 "entity_id": "sensor.batrium_cell_8_bypass_session",
@@ -2040,7 +2304,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 8 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_9_voltage_2": {
 "entity_id": "sensor.batrium_cell_9_voltage_2",
@@ -2048,7 +2313,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 9 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_9_bypass_current": {
 "entity_id": "sensor.batrium_cell_9_bypass_current",
@@ -2056,7 +2322,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 9 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_9_bypass_session": {
 "entity_id": "sensor.batrium_cell_9_bypass_session",
@@ -2064,7 +2331,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 9 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_10_voltage_2": {
 "entity_id": "sensor.batrium_cell_10_voltage_2",
@@ -2072,7 +2340,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 10 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_10_bypass_current": {
 "entity_id": "sensor.batrium_cell_10_bypass_current",
@@ -2080,7 +2349,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 10 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_10_bypass_session": {
 "entity_id": "sensor.batrium_cell_10_bypass_session",
@@ -2088,7 +2358,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 10 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_11_voltage_2": {
 "entity_id": "sensor.batrium_cell_11_voltage_2",
@@ -2096,7 +2367,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 11 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_11_bypass_current": {
 "entity_id": "sensor.batrium_cell_11_bypass_current",
@@ -2104,7 +2376,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 11 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_11_bypass_session": {
 "entity_id": "sensor.batrium_cell_11_bypass_session",
@@ -2112,7 +2385,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 11 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_12_voltage_2": {
 "entity_id": "sensor.batrium_cell_12_voltage_2",
@@ -2120,7 +2394,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 12 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_12_bypass_current": {
 "entity_id": "sensor.batrium_cell_12_bypass_current",
@@ -2128,7 +2403,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 12 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_12_bypass_session": {
 "entity_id": "sensor.batrium_cell_12_bypass_session",
@@ -2136,7 +2412,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 12 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_13_voltage_2": {
 "entity_id": "sensor.batrium_cell_13_voltage_2",
@@ -2144,7 +2421,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 13 Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_13_bypass_current": {
 "entity_id": "sensor.batrium_cell_13_bypass_current",
@@ -2152,7 +2430,8 @@
 "attributes": {
 "friendly_name": "Batrium Cell 13 Bypass Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_13_bypass_session": {
 "entity_id": "sensor.batrium_cell_13_bypass_session",
@@ -2160,77 +2439,88 @@
 "attributes": {
 "friendly_name": "Batrium Cell 13 Bypass Session",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_watchmon_status": {
 "entity_id": "sensor.batrium_watchmon_status",
 "state": "Charging",
 "attributes": {
 "friendly_name": "Batrium WatchMon Status"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_critical_battery_ok": {
 "entity_id": "binary_sensor.batrium_critical_battery_ok",
 "state": "on",
 "attributes": {
 "friendly_name": "Batrium Critical Battery OK"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_heating_on": {
 "entity_id": "binary_sensor.batrium_heating_on",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Heating On"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_cooling_on": {
 "entity_id": "binary_sensor.batrium_cooling_on",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Cooling On"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_watchmon_clock": {
 "entity_id": "sensor.batrium_watchmon_clock",
 "state": "2026-11-24T18:16:01+00:00",
 "attributes": {
 "friendly_name": "Batrium WatchMon Clock"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charge_power_state": {
 "entity_id": "sensor.batrium_charge_power_state",
 "state": "Normal Power",
 "attributes": {
 "friendly_name": "Batrium Charge Power State"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_discharge_power_state": {
 "entity_id": "sensor.batrium_discharge_power_state",
 "state": "Normal Power",
 "attributes": {
 "friendly_name": "Batrium Discharge Power State"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_auth_mode": {
 "entity_id": "sensor.batrium_auth_mode",
 "state": "Default",
 "attributes": {
 "friendly_name": "Batrium Auth Mode"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_cell_poller_mode": {
 "entity_id": "sensor.batrium_cell_poller_mode",
 "state": "Normal",
 "attributes": {
 "friendly_name": "Batrium Cell Poller Mode"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_firmware_version": {
 "entity_id": "sensor.batrium_firmware_version",
 "state": "3587",
 "attributes": {
 "friendly_name": "Batrium Firmware Version"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charger_target_voltage": {
 "entity_id": "sensor.batrium_charger_target_voltage",
@@ -2238,7 +2528,8 @@
 "attributes": {
 "friendly_name": "Batrium Charger Target Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charger_target_current": {
 "entity_id": "sensor.batrium_charger_target_current",
@@ -2246,7 +2537,8 @@
 "attributes": {
 "friendly_name": "Batrium Charger Target Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charger_actual_voltage": {
 "entity_id": "sensor.batrium_charger_actual_voltage",
@@ -2254,7 +2546,8 @@
 "attributes": {
 "friendly_name": "Batrium Charger Actual Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charger_actual_current": {
 "entity_id": "sensor.batrium_charger_actual_current",
@@ -2262,7 +2555,8 @@
 "attributes": {
 "friendly_name": "Batrium Charger Actual Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charger_temp": {
 "entity_id": "sensor.batrium_charger_temp",
@@ -2270,14 +2564,16 @@
 "attributes": {
 "friendly_name": "Batrium Charger Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_charger_last_message": {
 "entity_id": "sensor.batrium_charger_last_message",
 "state": "2026-11-24T18:15:57+00:00",
 "attributes": {
 "friendly_name": "Batrium Charger Last Message"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_inverter_target_voltage": {
 "entity_id": "sensor.batrium_inverter_target_voltage",
@@ -2285,7 +2581,8 @@
 "attributes": {
 "friendly_name": "Batrium Inverter Target Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_inverter_target_current": {
 "entity_id": "sensor.batrium_inverter_target_current",
@@ -2293,7 +2590,8 @@
 "attributes": {
 "friendly_name": "Batrium Inverter Target Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_inverter_actual_voltage": {
 "entity_id": "sensor.batrium_inverter_actual_voltage",
@@ -2301,7 +2599,8 @@
 "attributes": {
 "friendly_name": "Batrium Inverter Actual Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_inverter_actual_current": {
 "entity_id": "sensor.batrium_inverter_actual_current",
@@ -2309,7 +2608,8 @@
 "attributes": {
 "friendly_name": "Batrium Inverter Actual Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_inverter_temp": {
 "entity_id": "sensor.batrium_inverter_temp",
@@ -2317,49 +2617,56 @@
 "attributes": {
 "friendly_name": "Batrium Inverter Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_inverter_last_message": {
 "entity_id": "sensor.batrium_inverter_last_message",
 "state": "2026-11-24T18:15:57+00:00",
 "attributes": {
 "friendly_name": "Batrium Inverter Last Message"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_charging_allowed": {
 "entity_id": "binary_sensor.batrium_charging_allowed",
 "state": "on",
 "attributes": {
 "friendly_name": "Batrium Charging Allowed"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_charge_limited": {
 "entity_id": "binary_sensor.batrium_charge_limited",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Charge Limited"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_discharging_allowed": {
 "entity_id": "binary_sensor.batrium_discharging_allowed",
 "state": "on",
 "attributes": {
 "friendly_name": "Batrium Discharging Allowed"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "binary_sensor.batrium_discharge_limited": {
 "entity_id": "binary_sensor.batrium_discharge_limited",
 "state": "off",
 "attributes": {
 "friendly_name": "Batrium Discharge Limited"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_critical_events": {
 "entity_id": "sensor.batrium_critical_events",
 "state": "0",
 "attributes": {
 "friendly_name": "Batrium Critical Events"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_energy_in": {
 "entity_id": "sensor.batrium_today_energy_in",
@@ -2367,7 +2674,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Energy In",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_energy_out": {
 "entity_id": "sensor.batrium_today_energy_out",
@@ -2375,7 +2683,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Energy Out",
 "unit_of_measurement": "kWh"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_charge": {
 "entity_id": "sensor.batrium_today_charge",
@@ -2383,7 +2692,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Charge",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_discharge": {
 "entity_id": "sensor.batrium_today_discharge",
@@ -2391,7 +2701,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Discharge",
 "unit_of_measurement": "Ah"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_peak_charge_current": {
 "entity_id": "sensor.batrium_today_peak_charge_current",
@@ -2399,7 +2710,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Peak Charge Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_peak_discharge_current": {
 "entity_id": "sensor.batrium_today_peak_discharge_current",
@@ -2407,7 +2719,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Peak Discharge Current",
 "unit_of_measurement": "A"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_min_cell_voltage": {
 "entity_id": "sensor.batrium_today_min_cell_voltage",
@@ -2415,7 +2728,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Min Cell Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_max_cell_voltage": {
 "entity_id": "sensor.batrium_today_max_cell_voltage",
@@ -2423,7 +2737,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Max Cell Voltage",
 "unit_of_measurement": "V"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_min_temp": {
 "entity_id": "sensor.batrium_today_min_temp",
@@ -2431,7 +2746,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Min Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_max_temp": {
 "entity_id": "sensor.batrium_today_max_temp",
@@ -2439,7 +2755,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Max Temp",
 "unit_of_measurement": "\u00b0F"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_min_soc": {
 "entity_id": "sensor.batrium_today_min_soc",
@@ -2447,7 +2764,8 @@
 "attributes": {
 "friendly_name": "Batrium Today Min SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_today_max_soc": {
 "entity_id": "sensor.batrium_today_max_soc",
@@ -2455,27 +2773,31 @@
 "attributes": {
 "friendly_name": "Batrium Today Max SOC",
 "unit_of_measurement": "%"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_soc_cycles": {
 "entity_id": "sensor.batrium_soc_cycles",
 "state": "97",
 "attributes": {
 "friendly_name": "Batrium SOC Cycles"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_last_low_soc_recal": {
 "entity_id": "sensor.batrium_last_low_soc_recal",
 "state": "unknown",
 "attributes": {
 "friendly_name": "Batrium Last Low SOC Recal"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 },
 "sensor.batrium_last_high_soc_recal": {
 "entity_id": "sensor.batrium_last_high_soc_recal",
 "state": "2026-10-22T19:31:32+00:00",
 "attributes": {
 "friendly_name": "Batrium Last High SOC Recal"
-}
+},
+"last_updated": "2026-11-24T18:16:00+00:00"
 }
 }

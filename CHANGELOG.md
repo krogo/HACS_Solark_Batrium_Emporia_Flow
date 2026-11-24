@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+- Visual editor for all four cards (Home Assistant's own form fields). Existing YAML keeps working; options the editor doesn't show are preserved.
+- Cards added from the picker start with auto-detected sensors (preferring ones that are updating, so stale leftovers of an old setup are skipped) and show live previews.
+- An empty card shows a hint to open the editor instead of a configuration error.
+
 ## 1.2.2
 - Card picker names end in "(krogo)" so searching "krogo" lists all four cards.
 

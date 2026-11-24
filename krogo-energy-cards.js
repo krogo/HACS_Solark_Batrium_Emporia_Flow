@@ -16,7 +16,7 @@
  * JavaScript module resource, hard-refresh the browser.
  */
 
-const VERSION = "1.2.2";
+const VERSION = "1.3.0";
 
 /* ------------------------------------------------------------------ helpers */
 
@@ -182,8 +182,16 @@ class KecBase extends HTMLElement {
     this._sig = sig;
     this.update();
   }
+  /** True when no entity is configured yet (fresh card from the picker). */
+  isEmpty() { return false; }
+  _hint() {
+    this.shadowRoot.innerHTML = `<style>${STYLE}</style><ha-card><div class="head"><ha-icon icon="mdi:pencil"></ha-icon>
+      <div class="title">${esc(this.constructor.label || "Card")}</div></div>
+      <div class="muted">No sensors set yet. Open the card editor to choose them, or paste a YAML example from the README.</div></ha-card>`;
+  }
   /** Full re-render. Subclasses with animations override to patch in place. */
   update() {
+    if (this.isEmpty()) { this._built = false; return this._hint(); }
     this.shadowRoot.innerHTML = `<style>${STYLE}${this.css ? this.css() : ""}</style>${this.html()}`;
     this.shadowRoot.querySelectorAll("[data-entity]").forEach((el) =>
       el.addEventListener("click", (ev) => { ev.stopPropagation(); moreInfo(this, el.dataset.entity); }));
@@ -208,9 +216,8 @@ const ids = (...specs) => specs.flat().map(eid).filter(Boolean);
  * idle_threshold: 20                             # W below which a path is idle
  */
 class EnergyFlowCard extends KecBase {
-  validate(c) {
-    if (!c.solar && !c.home && !c.battery && !c.grid) throw new Error("Set at least one of solar, home, battery, grid");
-  }
+  static label = "Energy flow";
+  isEmpty() { const c = this._config; return !eid(c.solar) && !eid(c.home) && !eid(c.battery) && !eid(c.grid); }
   watched() {
     const c = this._config;
     return ids(c.solar, c.home, c.battery, c.grid, c.battery?.soc, c.grid?.relay);
@@ -251,10 +258,10 @@ class EnergyFlowCard extends KecBase {
       solar: `M200 76 L200 132`, grid: `M88 145 L187 145`,
       home: `M213 145 L312 145`, battery: `M200 158 L200 214`,
     };
-    const paths = Object.keys(N).filter((k) => c[k]).map((k) =>
+    const paths = Object.keys(N).filter((k) => eid(c[k])).map((k) =>
       `<path class="path" d="${P[k]}"/><path class="dots" id="d-${k}" d="${P[k]}"/>`).join("");
     const pos = (k) => `left:${(N[k][0] / 400) * 100}%;top:${(N[k][1] / 290) * 100}%`;
-    const node = (k, icon, colorVar, extra = "") => c[k] ? `
+    const node = (k, icon, colorVar, extra = "") => eid(c[k]) ? `
       <div class="node ${k === "battery" ? "batt" : ""}" id="n-${k}" style="${pos(k)};--nc:${colorVar}" data-entity="${esc(eid(c[k]))}">
         ${extra}<ha-icon icon="${icon}"></ha-icon><div class="v" id="v-${k}">—</div><div class="s" id="s-${k}"></div>
       </div>` : "";
@@ -273,13 +280,15 @@ class EnergyFlowCard extends KecBase {
   }
   update() {
     // Build once; afterwards patch values so the CSS animations keep running.
-    if (!this.shadowRoot.getElementById("chip")) super.update();
+    if (this.isEmpty()) { this._built = false; return this._hint(); }
+    if (!this._built || !this.shadowRoot.getElementById("chip")) { super.update(); this._built = true; }
     const c = this._config, h = this._hass, $ = (id) => this.shadowRoot.getElementById(id);
     const idle = c.idle_threshold ?? 20;
-    const solar = c.solar ? Math.max(0, watts(h, c.solar) ?? 0) : null;
-    const home = c.home ? Math.abs(watts(h, c.home) ?? 0) : null;
-    const batt = c.battery ? watts(h, c.battery) : null;   // + charging
-    const grid = c.grid ? watts(h, c.grid) : null;         // + importing
+    const has = (k) => !!eid(c[k]);
+    const solar = has("solar") ? Math.max(0, watts(h, c.solar) ?? 0) : null;
+    const home = has("home") ? Math.abs(watts(h, c.home) ?? 0) : null;
+    const batt = has("battery") ? watts(h, c.battery) : null;   // + charging
+    const grid = has("grid") ? watts(h, c.grid) : null;         // + importing
 
     // Solar and grid paths are drawn node→hub; home and battery hub→node.
     const anim = (k, w, towardHub) => {
@@ -294,20 +303,20 @@ class EnergyFlowCard extends KecBase {
       d.style.setProperty("--dir", towardHub === drawnTowardHub ? "normal" : "reverse");
     };
 
-    if (c.solar) {
+    if (has("solar")) {
       $("v-solar").textContent = fmtPower(solar);
       $("s-solar").textContent = "Solar";
       $("d-solar").style.stroke = "var(--kec-solar)";
       anim("solar", solar, true);
       $("n-solar").classList.toggle("dim", solar < idle);
     }
-    if (c.home) {
+    if (has("home")) {
       $("v-home").textContent = fmtPower(home);
       $("s-home").textContent = "Home";
       $("d-home").style.stroke = "var(--kec-home)";
       anim("home", home, false);
     }
-    if (c.grid) {
+    if (has("grid")) {
       const relay = c.grid.relay ? stateObj(h, c.grid.relay)?.state : null;
       const off = relay != null && /^(open|off|disconnected|0|false)$/i.test(relay);
       $("v-grid").textContent = off ? "Off-grid" : fmtPower(grid == null ? null : Math.abs(grid));
@@ -318,7 +327,7 @@ class EnergyFlowCard extends KecBase {
       anim("grid", off ? null : grid, grid != null && grid > 0);
       $("n-grid").classList.toggle("dim", off || grid == null || Math.abs(grid) < idle);
     }
-    if (c.battery) {
+    if (has("battery")) {
       const soc = c.battery.soc ? num(h, c.battery.soc) : null;
       const charging = batt != null && batt >= idle, discharging = batt != null && batt <= -idle;
       const col = discharging ? "var(--kec-batt-out)" : "var(--kec-batt-in)";
@@ -374,18 +383,17 @@ class EnergyFlowCard extends KecBase {
  * idle_threshold: 20          # W
  */
 class BatteryBankCard extends KecBase {
-  validate(c) {
-    if (!c.entities || (!c.entities.soc && !c.entities.power)) throw new Error("entities.soc or entities.power is required");
-  }
+  static label = "Battery bank";
+  isEmpty() { const e = this._config.entities || {}; return !eid(e.soc) && !eid(e.power); }
   _cells() {
     const cc = this._config.cells;
     if (!cc) return [];
-    if (Array.isArray(cc)) return cc.map(spec);
-    if (cc.entities) return cc.entities.map(spec);
+    if (Array.isArray(cc)) return cc.map(spec).filter(Boolean);
+    if (cc.entities) return cc.entities.map(spec).filter(Boolean);
     if (cc.pattern && cc.count) return Array.from({ length: cc.count }, (_, i) => ({ entity: cc.pattern.replace("{n}", i + 1) }));
     return [];
   }
-  watched() { return ids(Object.values(this._config.entities), this._cells()); }
+  watched() { return ids(Object.values(this._config.entities || {}), this._cells()); }
   getCardSize() { return this._config.cells ? 7 : 5; }
   css() {
     return `
@@ -409,7 +417,7 @@ class BatteryBankCard extends KecBase {
     `;
   }
   html() {
-    const c = this._config, h = this._hass, e = c.entities;
+    const c = this._config, h = this._hass, e = c.entities || {};
     const idle = c.idle_threshold ?? 20;
     const soc = num(h, e.soc);
     const p = watts(h, e.power);
@@ -426,8 +434,8 @@ class BatteryBankCard extends KecBase {
     const I = num(h, e.current), V = volts(h, e.voltage);
     // Ah stored, with the bank size when both capacity sensors exist (to_empty + to_full).
     const ce = num(h, e.capacity_to_empty), cf = num(h, e.capacity_to_full);
-    const stored = e.capacity_to_empty ? `<div class="tile" data-entity="${esc(eid(e.capacity_to_empty))}"><div class="lbl">Stored Ah</div>
-      <div class="val">${fmt(ce, 0)}${ce != null && cf != null ? `<small>/${(ce + cf).toFixed(0)}</small>` : ""}</div></div>`
+    const stored = e.capacity_to_empty ? `<div class="tile" data-entity="${esc(eid(e.capacity_to_empty))}"><div class="lbl">Stored</div>
+      <div class="val">${fmt(ce, 0)}<small>${ce != null && cf != null ? `/${(ce + cf).toFixed(0)}` : ""}Ah</small></div></div>`
       : tile("capacity_to_full", "To fill", u(fmt(cf, 0), "Ah"));
     const top = `<div class="top">
       <div class="socwrap" data-entity="${esc(eid(e.soc))}">${ring(soc, { color: socCol })}
@@ -518,12 +526,11 @@ class BatteryBankCard extends KecBase {
  * hide_below: 0              # W; rows under this are folded into "show all"
  */
 class CircuitsCard extends KecBase {
-  validate(c) {
-    if (!c.entities && !c.auto && !c.match) throw new Error("Set entities:, match: <regex> or auto: <integration>");
-  }
+  static label = "Circuits";
+  isEmpty() { const c = this._config; return !(c.entities || []).length && !c.auto && !c.match && !eid(c.total); }
   _list() {
     const c = this._config, h = this._hass;
-    let list = (c.entities || []).map(spec);
+    let list = (c.entities || []).map(spec).filter(Boolean);
     if (c.match) {
       const re = new RegExp(c.match);
       const have = new Set(list.map((s) => s.entity));
@@ -623,6 +630,8 @@ class CircuitsCard extends KecBase {
  *   - { entity: sensor.solark_grid_buy_energy, name: Bought }
  */
 class InverterCard extends KecBase {
+  static label = "Inverter";
+  isEmpty() { return this.watched().length === 0; }
   watched() {
     const c = this._config;
     return ids(c.pv?.total, c.pv?.strings || [], c.legs || [], c.load, c.grid?.voltage, c.grid?.frequency, c.grid?.relay,
@@ -644,7 +653,7 @@ class InverterCard extends KecBase {
     const c = this._config, h = this._hass;
     const u = (v, unit) => `${v}<small>${unit}</small>`;
     // Strings whose sensor doesn't exist yet (e.g. an unused PV3 input) are hidden until it does.
-    const strings = (c.pv?.strings || []).map(spec).filter((s) => c.pv.show_missing || h.states[s.entity]);
+    const strings = (c.pv?.strings || []).map(spec).filter(Boolean).filter((s) => c.pv.show_missing || h.states[s.entity]);
     const sw = strings.map((s) => { const w = watts(h, s); return w == null ? null : Math.max(0, w); });
     const pvTotal = c.pv?.total ? Math.max(0, watts(h, c.pv.total) ?? 0) : sw.reduce((a, b) => a + (b ?? 0), 0);
     const cap = c.pv?.capacity ?? Math.max(pvTotal, ...sw.map((w) => w ?? 0), 1);
@@ -657,7 +666,7 @@ class InverterCard extends KecBase {
           <span class="w">${fmtPower(sw[i])}</span></div>`).join("")}
       </div>` : "";
 
-    const legs = (c.legs || []).map(spec);
+    const legs = (c.legs || []).map(spec).filter(Boolean);
     const lw = legs.map((s) => watts(h, s));
     const lmax = Math.max(...lw.map((w) => Math.abs(w ?? 0)), 1);
     const load = c.load ? watts(h, c.load) : null;
@@ -687,7 +696,7 @@ class InverterCard extends KecBase {
       </div></div>`;
     }
 
-    const today = (c.today || []).map(spec);
+    const today = (c.today || []).map(spec).filter(Boolean);
     const todayHtml = today.length ? `<div class="section"><span class="lbl">Today</span><div class="tiles">
         ${today.map((s) => `<div class="tile" data-entity="${esc(s.entity)}"><div class="lbl">${esc(s.name ?? h.states[s.entity]?.attributes?.friendly_name ?? s.entity)}</div>
           <div class="val">${u(fmt(kwh(h, s), 1), "kWh")}</div></div>`).join("")}</div></div>` : "";
@@ -699,6 +708,358 @@ class InverterCard extends KecBase {
     </ha-card>`;
   }
 }
+
+/* ------------------------------------------------------------ visual editor */
+/*
+ * HA's ha-form edits flat data, and its expandable groups don't nest values.
+ * The cards use nested config (battery: { entity, invert, soc }), so the editor
+ * maps each form field to a path in the config and translates both ways.
+ * Anything the editor doesn't know about (custom names, lists it doesn't show)
+ * is left untouched.
+ */
+
+const S_POWER = { entity: { filter: [{ domain: "sensor" }] } };
+const S_ENT = { entity: {} };
+const S_BOOL = { boolean: {} };
+const S_TEXT = { text: {} };
+const S_ICON = { icon: {} };
+const S_NUM = (min, max, step = 1, unit) => ({ number: { min, max, step, mode: "box", ...(unit ? { unit_of_measurement: unit } : {}) } });
+
+/** Read a path; a plain "sensor.x" string stands in for { entity: "sensor.x" }. */
+function getPath(obj, path) {
+  let cur = obj;
+  for (let i = 0; i < path.length; i++) {
+    const k = path[i];
+    if (cur == null) return undefined;
+    if (typeof cur === "string") return k === "entity" && i === path.length - 1 ? cur : undefined;
+    cur = cur[k];
+  }
+  return cur;
+}
+
+/** Write a path immutably; empty values remove the key; { entity } alone collapses to a string. */
+function setPath(obj, path, value) {
+  const empty = value === undefined || value === null || value === "" || value === false;
+  const rec = (node, i) => {
+    const k = path[i];
+    if (typeof node === "string") node = { entity: node };
+    const base = Array.isArray(node) ? [...node] : node == null && typeof k === "number" ? [] : { ...(node || {}) };
+    if (i === path.length - 1) {
+      if (empty) { if (Array.isArray(base)) base[k] = undefined; else delete base[k]; }
+      else base[k] = value;
+    } else {
+      const child = rec(base[k], i + 1);
+      if (child === undefined) { if (Array.isArray(base)) base[k] = undefined; else delete base[k]; }
+      else base[k] = child;
+    }
+    if (Array.isArray(base)) {
+      while (base.length && base[base.length - 1] === undefined) base.pop();
+      return base.length ? base : undefined;
+    }
+    const keys = Object.keys(base);
+    if (!keys.length) return undefined;
+    if (keys.length === 1 && keys[0] === "entity" && typeof base.entity === "string") return base.entity;
+    // A list item left holding only a name (its sensor was cleared) is dropped too.
+    if (!("entity" in base) && keys.every((x) => x === "name") && path.some((x) => typeof x === "number")) return undefined;
+    return base;
+  };
+  return rec(obj, 0) ?? {};
+}
+
+class KecEditor extends HTMLElement {
+  /** fields: [{ key, path, selector, label, helper?, group? }] */
+  static fields = [];
+  setConfig(config) { this._config = config; this._render(); }
+  set hass(hass) { this._hass = hass; if (this._form) this._form.hass = hass; else this._render(); }
+  _fields() { return this.constructor.fields; }
+  _schema() {
+    const groups = [];
+    const byGroup = new Map();
+    for (const f of this._fields()) {
+      const item = { name: f.key, selector: f.selector };
+      if (!f.group) { groups.push(item); continue; }
+      if (!byGroup.has(f.group)) {
+        const g = { type: "expandable", name: "", title: f.group, schema: [] };
+        byGroup.set(f.group, g); groups.push(g);
+      }
+      byGroup.get(f.group).schema.push(item);
+    }
+    return groups;
+  }
+  _data() {
+    const d = {};
+    for (const f of this._fields()) {
+      const v = f.get ? f.get(this._config) : getPath(this._config, f.path);
+      if (v !== undefined) d[f.key] = v;
+    }
+    return d;
+  }
+  _render() {
+    if (!this._config || !this._hass) return;
+    if (!this._form) {
+      this._form = document.createElement("ha-form");
+      const labels = Object.fromEntries(this._fields().map((f) => [f.key, f]));
+      this._form.computeLabel = (s) => labels[s.name]?.label ?? s.title ?? s.name;
+      this._form.computeHelper = (s) => labels[s.name]?.helper;
+      this._form.addEventListener("value-changed", (ev) => {
+        ev.stopPropagation();
+        const data = ev.detail.value || {};
+        let cfg = { ...this._config };
+        for (const f of this._fields()) {
+          const before = f.get ? f.get(this._config) : getPath(this._config, f.path);
+          if (data[f.key] === before) continue;
+          cfg = f.set ? f.set(cfg, data[f.key]) : setPath(cfg, f.path, data[f.key]);
+        }
+        this._config = cfg;
+        this.dispatchEvent(new CustomEvent("config-changed", { detail: { config: cfg }, bubbles: true, composed: true }));
+      });
+      this.appendChild(this._form);
+    }
+    this._form.hass = this._hass;
+    this._form.schema = this._schema();
+    this._form.data = this._data();
+  }
+}
+
+const F = (key, path, selector, label, group, helper) => ({ key, path, selector, label, group, helper });
+
+class FlowEditor extends KecEditor {
+  static fields = [
+    F("title", ["title"], S_TEXT, "Title"),
+    F("solar", ["solar", "entity"], S_POWER, "Solar power"),
+    F("home", ["home", "entity"], S_POWER, "Home / load power"),
+    F("battery", ["battery", "entity"], S_POWER, "Battery power", undefined, "Positive while charging (turn on Invert if not)"),
+    F("battery_invert", ["battery", "invert"], S_BOOL, "Invert battery power"),
+    F("battery_soc", ["battery", "soc"], S_ENT, "Battery state of charge"),
+    F("grid", ["grid", "entity"], S_POWER, "Grid power", "Grid", "Positive while importing (turn on Invert if not)"),
+    F("grid_invert", ["grid", "invert"], S_BOOL, "Invert grid power", "Grid"),
+    F("grid_relay", ["grid", "relay"], S_ENT, "Grid relay / connection state", "Grid"),
+    F("solar_invert", ["solar", "invert"], S_BOOL, "Invert solar power", "Advanced"),
+    F("home_invert", ["home", "invert"], S_BOOL, "Invert home power", "Advanced"),
+    F("idle_threshold", ["idle_threshold"], S_NUM(0, 1000, 5, "W"), "Idle below", "Advanced"),
+  ];
+}
+
+const BB = (k, label, group, sel = S_ENT) => F(`e_${k}`, ["entities", k, "entity"], sel, label, group);
+class BatteryEditor extends KecEditor {
+  static fields = [
+    F("name", ["name"], S_TEXT, "Name"),
+    F("icon", ["icon"], S_ICON, "Icon"),
+    BB("soc", "State of charge"),
+    BB("power", "Power", undefined, S_POWER),
+    F("power_invert", ["entities", "power", "invert"], S_BOOL, "Invert power (positive must mean charging)"),
+    BB("current", "Current"),
+    BB("voltage", "Voltage"),
+    BB("time_to_full", "Time to full (minutes)", "Time and capacity"),
+    BB("time_to_empty", "Time to empty (minutes)", "Time and capacity"),
+    BB("capacity_to_full", "Capacity to full (Ah)", "Time and capacity"),
+    BB("capacity_to_empty", "Capacity to empty / stored (Ah)", "Time and capacity"),
+    BB("cell_min", "Lowest cell voltage", "Cells"),
+    BB("cell_max", "Highest cell voltage", "Cells"),
+    F("cells_pattern", ["cells", "pattern"], S_TEXT, "Per-cell sensor pattern", "Cells", "e.g. sensor.batrium_cell_{n}_voltage — {n} is the cell number"),
+    F("cells_count", ["cells", "count"], S_NUM(1, 64), "Number of cells", "Cells"),
+    { key: "cell_lo", selector: S_NUM(0, 5, 0.05, "V"), label: "Cell range low", group: "Cells",
+      get: (c) => c.cell_range?.[0], set: (c, v) => ({ ...c, cell_range: [v ?? 3.0, c.cell_range?.[1] ?? 4.2] }) },
+    { key: "cell_hi", selector: S_NUM(0, 5, 0.05, "V"), label: "Cell range high", group: "Cells",
+      get: (c) => c.cell_range?.[1], set: (c, v) => ({ ...c, cell_range: [c.cell_range?.[0] ?? 3.0, v ?? 4.2] }) },
+    F("spread_warn", ["spread_warn"], S_NUM(0, 1, 0.005, "V"), "Warn when spread exceeds", "Cells"),
+    BB("temp_min", "Lowest temperature", "Temperature, limits and energy"),
+    BB("temp_max", "Highest temperature", "Temperature, limits and energy"),
+    BB("charge_limit", "Charge current limit", "Temperature, limits and energy"),
+    BB("discharge_limit", "Discharge current limit", "Temperature, limits and energy"),
+    BB("energy_in", "Energy in today", "Temperature, limits and energy"),
+    BB("energy_out", "Energy out today", "Temperature, limits and energy"),
+  ];
+}
+
+const pvF = (i) => [
+  F(`pv${i}`, ["pv", "strings", i - 1, "entity"], S_POWER, `PV${i} power`, "Solar"),
+];
+class InverterEditor extends KecEditor {
+  static fields = [
+    F("title", ["title"], S_TEXT, "Title"),
+    F("pv_total", ["pv", "total"], S_POWER, "Total PV power", "Solar"),
+    ...pvF(1), ...pvF(2), ...pvF(3), ...pvF(4),
+    F("pv_capacity", ["pv", "capacity"], S_NUM(0, 100000, 100, "W"), "Array capacity (optional)", "Solar"),
+    F("l1", ["legs", 0, "entity"], S_POWER, "Leg L1 power", "AC output"),
+    F("l2", ["legs", 1, "entity"], S_POWER, "Leg L2 power", "AC output"),
+    F("load", ["load"], S_POWER, "Load power", "AC output"),
+    F("b_power", ["battery", "power", "entity"], S_POWER, "Battery power", "Battery bus"),
+    F("b_power_inv", ["battery", "power", "invert"], S_BOOL, "Invert battery power", "Battery bus"),
+    F("b_current", ["battery", "current", "entity"], S_ENT, "Battery current", "Battery bus"),
+    F("b_current_inv", ["battery", "current", "invert"], S_BOOL, "Invert battery current", "Battery bus"),
+    F("b_voltage", ["battery", "voltage"], S_ENT, "Battery voltage", "Battery bus"),
+    F("g_voltage", ["grid", "voltage"], S_ENT, "Grid voltage", "Grid"),
+    F("g_freq", ["grid", "frequency"], S_ENT, "Grid frequency", "Grid"),
+    F("g_relay", ["grid", "relay"], S_ENT, "Grid relay", "Grid"),
+    ...[1, 2, 3, 4, 5, 6].flatMap((i) => [
+      F(`t${i}`, ["today", i - 1, "entity"], S_ENT, `Today tile ${i}`, "Today"),
+      F(`t${i}_name`, ["today", i - 1, "name"], S_TEXT, `Tile ${i} label`, "Today"),
+    ]),
+  ];
+}
+// PV strings and legs get default names when first set from the editor.
+for (const [k, path, nm] of [...[1, 2, 3, 4].map((i) => [`pv${i}`, ["pv", "strings", i - 1], `PV${i}`]), ["l1", ["legs", 0], "L1"], ["l2", ["legs", 1], "L2"]]) {
+  const f = InverterEditor.fields.find((x) => x.key === k);
+  f.set = (c, v) => {
+    let cfg = setPath(c, [...path, "entity"], v);
+    const node = getPath(cfg, path);
+    if (v && (typeof node === "string" || (node && !node.name))) cfg = setPath(cfg, [...path, "name"], nm);
+    if (!v) cfg = setPath(cfg, path, undefined);
+    return cfg;
+  };
+}
+
+class CircuitsEditor extends KecEditor {
+  static fields = [
+    F("title", ["title"], S_TEXT, "Title"),
+    F("total", ["total"], S_POWER, "Total power (optional)"),
+    F("balance", ["balance"], S_POWER, "Unmonitored / balance power (optional)"),
+    { key: "entities", selector: { entity: { multiple: true, filter: [{ domain: "sensor" }] } }, label: "Circuits",
+      get: (c) => (c.entities || []).map(eid),
+      // Keep custom names for circuits that stay selected.
+      set: (c, v) => {
+        const old = new Map((c.entities || []).map((s) => [eid(s), s]));
+        const list = (v || []).map((id) => old.get(id) ?? id);
+        const cfg = { ...c };
+        if (list.length) cfg.entities = list; else delete cfg.entities;
+        return cfg;
+      } },
+    F("max", ["max"], S_NUM(1, 50), "Rows before “Show more”"),
+    F("strip", ["strip"], S_TEXT, "Remove from start of names", undefined, "e.g. vue2 "),
+    F("hide_below", ["hide_below"], S_NUM(0, 10000, 1, "W"), "Fold rows below", "Advanced"),
+    F("match", ["match"], S_TEXT, "Also include sensors whose id matches (regex)", "Advanced"),
+  ];
+}
+
+/* ---------------------------------------------------- picker starting config */
+/* Best-effort auto-detection so a card added from the picker shows real data. */
+
+function sensorsBy(hass, re, units) {
+  return Object.keys(hass?.states || {}).filter((id) => {
+    if (!id.startsWith("sensor.") || !re.test(id)) return false;
+    if (!units) return true;
+    const u = (hass.states[id].attributes?.unit_of_measurement || "").toLowerCase();
+    return units.includes(u);
+  }).sort((a, b) => {
+    // Prefer sensors that are actually updating (stale leftovers of an old setup often share a name),
+    // then the shortest id.
+    const t = (id) => Date.parse(hass.states[id].last_updated || hass.states[id].last_changed || 0) || 0;
+    return t(b) - t(a) || a.length - b.length;
+  });
+}
+const first = (hass, re, units) => sensorsBy(hass, re, units)[0];
+const W = ["w", "kw"];
+
+function stubFlow(hass) {
+  const battery = first(hass, /(^|_)battery_power$/, W);
+  const grid = first(hass, /(^|_)(total_)?grid_power$/, W);
+  const cfg = { title: "Power flow" };
+  const solar = first(hass, /(^|_)pv_(input_)?power$/, W) ?? first(hass, /solar.*power$/, W);
+  const home = first(hass, /(^|_)load_power$/, W);
+  if (solar) cfg.solar = { entity: solar };
+  if (home) cfg.home = { entity: home };
+  if (battery) {
+    // SolArk reports battery power negative while charging.
+    cfg.battery = { entity: battery, ...(/solark|sol_ark/.test(battery) ? { invert: true } : {}) };
+    const soc = first(hass, /soc_coulomb$/, ["%"]) ?? first(hass, /(state_of_charge|_soc)$/, ["%"]);
+    if (soc) cfg.battery.soc = soc;
+  }
+  if (grid) {
+    cfg.grid = { entity: grid };
+    const relay = first(hass, /grid_relay$/);
+    if (relay) cfg.grid.relay = relay;
+  }
+  return cfg;
+}
+
+function stubInverter(hass) {
+  const cfg = { title: "Inverter" };
+  const total = first(hass, /(^|_)pv_(input_)?power$/, W);
+  const strings = [1, 2, 3, 4].map((i) => [i, first(hass, new RegExp(`pv${i}_(input_)?power$`), W)]).filter(([, e]) => e);
+  if (total || strings.length) cfg.pv = { ...(total ? { total } : {}), ...(strings.length ? { strings: strings.map(([i, entity]) => ({ entity, name: `PV${i}` })) } : {}) };
+  const legs = [1, 2].map((i) => first(hass, new RegExp(`inverter_l${i}_power$`), W)).filter(Boolean);
+  if (legs.length) cfg.legs = legs.map((entity, i) => ({ entity, name: `L${i + 1}` }));
+  const load = first(hass, /(^|_)load_power$/, W);
+  if (load) cfg.load = load;
+  const bp = first(hass, /(^|_)battery_power$/, W), bi = first(hass, /(^|_)battery_current$/, ["a"]), bv = first(hass, /(^|_)battery_voltage$/, ["v"]);
+  const inv = (e) => (e && /solark|sol_ark/.test(e) ? { entity: e, invert: true } : e);
+  if (bp || bi || bv) cfg.battery = { ...(bp ? { power: inv(bp) } : {}), ...(bi ? { current: inv(bi) } : {}), ...(bv ? { voltage: bv } : {}) };
+  const gv = first(hass, /grid_(l1_l2_)?voltage$/, ["v"]), gf = first(hass, /grid_frequency$/, ["hz"]), gr = first(hass, /grid_relay$/);
+  if (gv || gf || gr) cfg.grid = { ...(gv ? { voltage: gv } : {}), ...(gf ? { frequency: gf } : {}), ...(gr ? { relay: gr } : {}) };
+  const today = [["pv", "PV"], ["load", "Load"], ["battery_charge", "Batt in"], ["battery_discharge", "Batt out"], ["grid_buy", "Bought"], ["grid_sell", "Sold"]]
+    .map(([k, name]) => [first(hass, new RegExp(`daily_${k}_energy$`), ["kwh", "wh"]), name]).filter(([e]) => e);
+  if (today.length) cfg.today = today.map(([entity, name]) => ({ entity, name }));
+  return cfg;
+}
+
+function stubBattery(hass) {
+  const e = {};
+  const put = (k, re, units) => { const x = first(hass, re, units); if (x) e[k] = x; };
+  put("soc", /soc_coulomb$/, ["%"]); if (!e.soc) put("soc", /(state_of_charge|_soc)$/, ["%"]);
+  put("power", /(pack|shunt)_power$/, W);
+  put("current", /shunt_current$/, ["a"]);
+  put("voltage", /pack_voltage$/, ["v"]);
+  put("time_to_full", /time_to_full$/); put("time_to_empty", /time_to_empty$/);
+  put("capacity_to_full", /capacity_to_full(_\d+)?$/, ["ah"]); put("capacity_to_empty", /capacity_to_empty(_\d+)?$/, ["ah"]);
+  put("cell_min", /cell_voltage_min$/, ["v", "mv"]); put("cell_max", /cell_voltage_max$/, ["v", "mv"]);
+  put("temp_min", /cell_temp_min$/); put("temp_max", /cell_temp_max$/);
+  put("charge_limit", /charger_target_current$/); put("discharge_limit", /inverter_target_current$/);
+  put("energy_in", /today_energy_in$/); put("energy_out", /today_energy_out$/);
+  // Name the card after the device the sensors belong to ("Batrium SOC (Coulomb)" -> "Batrium").
+  const devName = (hass.states[e.soc || e.power]?.attributes?.friendly_name || "").split(/\s+/)[0];
+  const cfg = { name: devName || "Battery bank", icon: "mdi:car-battery", entities: e };
+  // Per-cell sensors: sensor.<x>_cell_<n>_voltage, optionally with a _2 suffix; prefer the suffix that is live.
+  const cells = sensorsBy(hass, /_cell_\d+_voltage(_\d+)?$/, ["v", "mv"]);
+  if (cells.length) {
+    const groups = new Map();
+    for (const id of cells) {
+      const m = id.match(/^(.*_cell_)(\d+)(_voltage(?:_\d+)?)$/);
+      const key = m[1] + "{n}" + m[3];
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(+m[2]);
+    }
+    // Choose the set of cell sensors that agrees with the live min/max cell voltage; then the freshest.
+    const vals = (k) => groups.get(k).map((n) => volts(hass, k.replace("{n}", n))).filter((v) => v != null && v > 0);
+    const lo = volts(hass, e.cell_min), hi = volts(hass, e.cell_max);
+    const fit = (k) => { const v = vals(k); return lo == null || hi == null || !v.length ? 0 : Math.abs(Math.min(...v) - lo) + Math.abs(Math.max(...v) - hi); };
+    const fresh = (k) => Math.max(...groups.get(k).map((n) => Date.parse(hass.states[k.replace("{n}", n)]?.last_updated || 0) || 0));
+    const best = [...groups.keys()].sort((a, b) => fit(a) - fit(b) || fresh(b) - fresh(a) || groups.get(b).length - groups.get(a).length)[0];
+    const nums = groups.get(best).filter((n) => (parseFloat(hass.states[best.replace("{n}", n)]?.state) || 0) > 0);
+    if (nums.length) cfg.cells = { pattern: best, count: Math.max(...nums) };
+  }
+  return cfg;
+}
+
+function stubCircuits(hass) {
+  const total = first(hass, /(emporia|vue).*total_power$/, W) ?? first(hass, /total_power$/, W);
+  const cfg = { title: "Circuits", max: 8 };
+  if (!total) return cfg;
+  cfg.total = total;
+  const prefix = total.replace(/total_power$/, "");
+  const balance = first(hass, new RegExp("^" + prefix.replace(/\./g, "\\.") + "balance_power$"), W);
+  if (balance) cfg.balance = balance;
+  cfg.entities = sensorsBy(hass, new RegExp("^" + prefix.replace(/\./g, "\\.") + ".*_power(_\\d+)?$"), W)
+    // Skip the mains legs (<prefix>phase_a_power), which add up to the total; keep circuits like building_phase_a_power.
+    .filter((id) => id !== total && id !== balance && !/^phase_[a-c]_power$/.test(id.slice(prefix.length)));
+  // Common friendly-name prefix (e.g. "vue2 ") is stripped from labels.
+  const fn = hass.states[total]?.attributes?.friendly_name || "";
+  const p = fn.match(/^(\S+\s)/)?.[1];
+  if (p && cfg.entities.every((id) => (hass.states[id]?.attributes?.friendly_name || "").startsWith(p))) cfg.strip = p;
+  return cfg;
+}
+
+EnergyFlowCard.getConfigElement = () => document.createElement("krogo-flow-editor");
+EnergyFlowCard.getStubConfig = (hass) => stubFlow(hass);
+BatteryBankCard.getConfigElement = () => document.createElement("krogo-battery-editor");
+BatteryBankCard.getStubConfig = (hass) => stubBattery(hass);
+InverterCard.getConfigElement = () => document.createElement("krogo-inverter-editor");
+InverterCard.getStubConfig = (hass) => stubInverter(hass);
+CircuitsCard.getConfigElement = () => document.createElement("krogo-circuits-editor");
+CircuitsCard.getStubConfig = (hass) => stubCircuits(hass);
+for (const [tag, cls] of [["krogo-flow-editor", FlowEditor], ["krogo-battery-editor", BatteryEditor],
+                          ["krogo-inverter-editor", InverterEditor], ["krogo-circuits-editor", CircuitsEditor]])
+  if (!customElements.get(tag)) customElements.define(tag, cls);
 
 /* ------------------------------------------------------------- registration */
 
@@ -713,6 +1074,6 @@ for (const [tag, cls, name, description] of CARDS) {
   if (!customElements.get(tag)) customElements.define(tag, cls);
   // "krogo" in the name so the card picker's search finds all four together.
   if (!window.customCards.some((c) => c.type === tag))
-    window.customCards.push({ type: tag, name: `${name} (krogo)`, description, preview: false, documentationURL: "https://github.com/krogo/HACS_Solark_Batrium_Emporia_Flow" });
+    window.customCards.push({ type: tag, name: `${name} (krogo)`, description, preview: true, documentationURL: "https://github.com/krogo/HACS_Solark_Batrium_Emporia_Flow" });
 }
 console.info(`%c krogo-energy-cards %c ${VERSION} `, "background:#ff9800;color:#000;font-weight:600", "background:#333;color:#fff");

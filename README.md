@@ -14,6 +14,14 @@ Each card is independent. Place, size and arrange them as you like, or group the
 
 **Manual:** copy `krogo-energy-cards.js` to `/config/www/`, add `/local/krogo-energy-cards.js?v=1` as a JavaScript module resource (Settings → Dashboards → ⋮ → Resources), and hard-refresh. Bump `?v=` after each update.
 
+## Adding a card
+
+Edit dashboard → Add card → search **krogo**. Each card starts with sensors it finds automatically (SolArk-, Batrium- and Emporia-style names, preferring sensors that are actually updating), and the visual editor lets you change any of them. Everything in the editor can also be written in YAML, and YAML-only options (custom names, cell lists, extra tiles) are kept when you use the editor.
+
+If a card shows "No sensors set yet", open its editor and pick the sensors.
+
+If the card isn't in the picker after installing through HACS, check that the resource is registered (Settings → Dashboards → ⋮ → Resources): HACS can only add it when resources are managed in the UI, not with `lovelace: resource_mode: yaml`. Add `/hacsfiles/HACS_Solark_Batrium_Emporia_Flow/krogo-energy-cards.js` as a JavaScript module if it's missing.
+
 ## Common rules
 
 - An entity can be written as `sensor.x` or as `{ entity: sensor.x, invert: true, name: ... }`.
