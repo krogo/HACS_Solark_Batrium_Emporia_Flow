@@ -66,6 +66,7 @@ pv:
 legs:
   - { entity: sensor.solark_inverter_l1_power, name: L1 }
   - { entity: sensor.solark_inverter_l2_power, name: L2 }
+leg_max: 6000                              # optional W; bar range per leg (a leg's own `max:` overrides)
 load: sensor.solark_load_power
 battery:
   power: { entity: sensor.solark_battery_power, invert: true }

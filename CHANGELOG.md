@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.1
+- Inverter card: `leg_max` (and per-leg `max`) sets the bar range for the AC legs; bars turn amber above 90 %. Also in the visual editor.
+
 ## 1.3.0
 - Visual editor for all four cards (Home Assistant's own form fields). Existing YAML keeps working; options the editor doesn't show are preserved.
 - Cards added from the picker start with auto-detected sensors (preferring ones that are updating, so stale leftovers of an old setup are skipped) and show live previews.

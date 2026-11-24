@@ -16,7 +16,7 @@
  * JavaScript module resource, hard-refresh the browser.
  */
 
-const VERSION = "1.3.0";
+const VERSION = "1.3.1";
 
 /* ------------------------------------------------------------------ helpers */
 
@@ -615,6 +615,7 @@ class CircuitsCard extends KecBase {
  *   show_missing: false    # true to show them anyway (as "—")
  *   capacity: 12000        # W; bar scale (optional)
  * legs: [ { entity: sensor.solark_inverter_l1_power, name: L1 }, { entity: sensor.solark_inverter_l2_power, name: L2 } ]
+ * leg_max: 6000           # W; bar range for each leg (per-leg `max:` overrides). Omit to scale the legs against each other.
  * load: sensor.solark_load_power
  * grid:
  *   voltage: sensor.solark_grid_voltage
@@ -668,11 +669,13 @@ class InverterCard extends KecBase {
 
     const legs = (c.legs || []).map(spec).filter(Boolean);
     const lw = legs.map((s) => watts(h, s));
-    const lmax = Math.max(...lw.map((w) => Math.abs(w ?? 0)), 1);
+    // Bar range: per-leg `max`, else card-level `leg_max`, else the busier leg (relative).
+    const lrel = Math.max(...lw.map((w) => Math.abs(w ?? 0)), 1);
+    const lmax = (i) => legs[i].max ?? c.leg_max ?? lrel;
     const load = c.load ? watts(h, c.load) : null;
     const ac = legs.length || c.load ? `<div class="section"><span class="lbl">AC output${load != null ? ` · load ${fmtPower(load)}` : ""}</span>
         <div class="legs">${legs.map((s, i) => `<div class="tile leg" data-entity="${esc(s.entity)}"><div class="lbl">${esc(s.name ?? `L${i + 1}`)}</div>
-          <div class="val">${fmtPower(lw[i])}</div><div class="bar"><i style="width:${(Math.abs(lw[i] ?? 0) / lmax) * 100}%;--c:var(--kec-home)"></i></div></div>`).join("")}</div>
+          <div class="val">${fmtPower(lw[i])}${legs[i].max ?? c.leg_max ? `<small>/ ${fmtPower(lmax(i))}</small>` : ""}</div><div class="bar"><i style="width:${clamp((Math.abs(lw[i] ?? 0) / lmax(i)) * 100, 0, 100)}%;--c:${Math.abs(lw[i] ?? 0) > lmax(i) * 0.9 && (legs[i].max ?? c.leg_max) ? "var(--kec-warn)" : "var(--kec-home)"}"></i></div></div>`).join("")}</div>
       </div>` : "";
 
     const relay = c.grid?.relay ? stateObj(h, c.grid.relay)?.state : null;
@@ -883,6 +886,7 @@ class InverterEditor extends KecEditor {
     F("pv_capacity", ["pv", "capacity"], S_NUM(0, 100000, 100, "W"), "Array capacity (optional)", "Solar"),
     F("l1", ["legs", 0, "entity"], S_POWER, "Leg L1 power", "AC output"),
     F("l2", ["legs", 1, "entity"], S_POWER, "Leg L2 power", "AC output"),
+    F("leg_max", ["leg_max"], S_NUM(0, 50000, 100, "W"), "Leg bar range (max per leg)", "AC output", "Leave empty to scale the legs against each other"),
     F("load", ["load"], S_POWER, "Load power", "AC output"),
     F("b_power", ["battery", "power", "entity"], S_POWER, "Battery power", "Battery bus"),
     F("b_power_inv", ["battery", "power", "invert"], S_BOOL, "Invert battery power", "Battery bus"),
