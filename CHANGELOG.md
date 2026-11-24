@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.2
+- Card picker names end in "(krogo)" so searching "krogo" lists all four cards.
+
 ## 1.2.1
 - Inverter card: any number of PV strings; strings whose sensor doesn't exist are hidden (`show_missing: true` shows them as "—").
 

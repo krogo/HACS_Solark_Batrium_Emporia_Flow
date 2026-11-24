@@ -16,7 +16,7 @@
  * JavaScript module resource, hard-refresh the browser.
  */
 
-const VERSION = "1.2.1";
+const VERSION = "1.2.2";
 
 /* ------------------------------------------------------------------ helpers */
 
@@ -711,6 +711,8 @@ const CARDS = [
 window.customCards = window.customCards || [];
 for (const [tag, cls, name, description] of CARDS) {
   if (!customElements.get(tag)) customElements.define(tag, cls);
-  if (!window.customCards.some((c) => c.type === tag)) window.customCards.push({ type: tag, name, description, preview: false });
+  // "krogo" in the name so the card picker's search finds all four together.
+  if (!window.customCards.some((c) => c.type === tag))
+    window.customCards.push({ type: tag, name: `${name} (krogo)`, description, preview: false, documentationURL: "https://github.com/krogo/HACS_Solark_Batrium_Emporia_Flow" });
 }
 console.info(`%c krogo-energy-cards %c ${VERSION} `, "background:#ff9800;color:#000;font-weight:600", "background:#333;color:#fff");
