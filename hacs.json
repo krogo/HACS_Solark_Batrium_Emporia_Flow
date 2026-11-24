@@ -1,0 +1,6 @@
+{
+  "name": "krogo energy cards",
+  "filename": "krogo-energy-cards.js",
+  "render_readme": true,
+  "homeassistant": "2023.1.0"
+}
